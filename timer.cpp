@@ -23,19 +23,22 @@ int main()
         {
             system("cls");
             cout << hours << ":" << mins << ":" << secs << endl;
-            if (secs == 0)
+
+            if (secs == 0 && mins == 0 && hours > 0)
             {
-                secs = 59;
-                mins--;
-            }
-            if (mins == 0)
-            {
-                mins = 59;
+                mins = 60;
                 hours--;
             }
+            if (secs == 0 && mins > 0)
+            {
+                secs = 60;
+                mins--;
+            }
+            
             secs--;
             Sleep(1000);
         }
+        system("cls");
         cout << "Time over " << endl;
     }
     else
